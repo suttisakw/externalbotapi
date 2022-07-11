@@ -18,12 +18,13 @@ def callback():
     # print(decoded)
     user = decoded["events"][0]['replyToken']
     userID = decoded["destination"]
- 
     if 'postback' in json_line:
+        print('postback ' ,userID)
+
         data_in = decoded["events"][0]['postback']['data']
         print("poast_back " ,data_in)
         sendData = get_data_from_vesselname(data_in)
-        sendText(userID,sendData)
+        # sendText(userID,sendData)
         # sendData = flexmessage()
 
     else:
@@ -41,7 +42,7 @@ def callback():
             sendData = textReplay
         else:
             sendData = textReplay
-        replyText(user,sendData) # Send message
+    replyText(user,sendData) # Send message
     return '',200
 
 def replyText(user, text):
