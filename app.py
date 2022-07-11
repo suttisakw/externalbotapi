@@ -35,11 +35,7 @@ def callback():
             'text':textMessage
         }
         if textMessage == 'Tracking Status':
-            sendData = acction_VESSELNAME
-        elif textMessage == 'post': 
             sendData = getboat()
-        elif textMessage == 'post': 
-            sendData = textReplay
         else:
             sendData = textReplay
     replyText(user,sendData) # Send message
